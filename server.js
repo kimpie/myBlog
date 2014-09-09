@@ -27,12 +27,24 @@ app.get('/*', function  (req, res) {
   res.json(404, {status: 'not found'});
 });
 
+var postData = [
+  {
+    country: 'Cambodia',
+    title: 'Angkor Wat',
+    post: 'Lots of text and pictures'
+    date: 'October 2013'
+  }
+];
+
 //Connect the database
 
 mongodb.MongoClient.connect(uri, function(err, db) {
   
   if(err) throw err;
   var posts = db.collection('posts');
+  posts.insert(postData, function(err, result) {
+    if(err) throw err;
+  });
 });
 
 
