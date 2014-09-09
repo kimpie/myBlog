@@ -1,0 +1,16 @@
+{
+  "name": "wte_blog",
+  "description": "Kim's blog",
+  "version": "0.0.1",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "3.x"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
