@@ -3,10 +3,11 @@ var Schema = mongoose.Schema;
 ObjectId = Schema.ObjectId;
 
 var postSchema = new Schema ({
-	direction: String,
-	rule: String,
+	words: String,
 	category: String,
-	timer: Boolean
+	month: Number,
+	year: Number,
+	country: String
 });
 
 module.exports = db.model('Posts', postSchema);
