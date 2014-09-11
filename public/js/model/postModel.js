@@ -10,7 +10,7 @@ var app = app || {};
 			country: '',
 			year: '',
 			month: '',
-			body: [];
+			body: [],
 			title: '',
 			category: ''
 		}
