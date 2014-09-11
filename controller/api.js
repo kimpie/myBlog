@@ -3,6 +3,7 @@ var Post = require('../mongoose_models/post.js');
 //------------------------------------------Post logic------------------------------------ 
 //Find all posts
 exports.getPosts = function (req, res){
+	
 	Post.find(function(err, posts){
     res.send(posts);
   });
