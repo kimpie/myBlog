@@ -4,9 +4,9 @@ var app = app || {};
 
 	app.Posts = Backbone.Collection.extend({
 		model: app.postModel,
-
+		url: '/posts',
 		initialize: function(options){
-			console.log('app.Words initialized');
+			console.log('app.Posts initialized');
 		}
 		
 	});

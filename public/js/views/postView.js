@@ -13,27 +13,17 @@ var app = app || {};
 					'{{#each p}}'+
 					'<p class="lead"></p>'+
 					'{{/each}}'+
-				'{{/body}}'
+				'{{/body}}'+
 			'</div>' +
 			'</div>'
 		),
 
 		initialize: function  (options) {
 			this.model = options.model;
-			console.log('board view initialized with ');
+			console.log('post view initialized with ');
 			console.log(this.model);
 			this.model.bind("change", this.render, this);
 			this.model.bind("reset", this.render);
-		},
-
-		events: {
-			'click .cards': 'showCard'
-		},
-
-		showCard: function(info){
-			var category = info.currentTarget.title;
-			console.log(category);
-			app.AppView.vent.trigger('getCard', category);
 		},
 
 		render: function () {

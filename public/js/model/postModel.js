@@ -5,7 +5,6 @@ var app = app || {};
 
 
 	app.postModel = Backbone.Model.extend({
-		urlRoot: '/posts',
 		defaults: {
 			country: '',
 			year: '',
@@ -13,7 +12,11 @@ var app = app || {};
 			body: [],
 			title: '',
 			category: ''
+		},
+		initialize: function(options){
+			console.log('app.postModel initialized');
 		}
+
 	});
 
 })();

@@ -31,9 +31,11 @@ app.configure('development', function(){
 });
 
 app.get('/', function (req, res){
+  //res.redirect('/posts');
   res.send(index.html);
 });
 app.get('/posts', api.getPosts);
+app.get('/', api.getPost);
 
 app.get('/*', function  (req, res) {
   res.json(404, {status: 'not found'});
