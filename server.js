@@ -33,12 +33,11 @@ app.configure('development', function(){
 app.get('/', function (req, res){
   res.send(index.html);
 });
+app.get('/posts', api.getPosts);
 
 app.get('/*', function  (req, res) {
   res.json(404, {status: 'not found'});
 });
-
-app.get('/posts', api.getPosts);
 
 server.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
