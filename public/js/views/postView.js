@@ -6,15 +6,14 @@ var app = app || {};
 	app.postView = Backbone.View.extend({
 
 		template: Handlebars.compile(
-			'<div class="row">'+
-			'<div class="col-md-12" id="title">{{title}}</div>' +
-			'<div class="col-md-12" id="body">'+
-				'{{body}}'+
-					'{{#each p}}'+
-					'<p class="lead"></p>'+
+			'<div class="row" id="text">'+
+				'<div class="col-md-12" id="title"><h2>{{title}}</h2></div>' +
+				'<div class="col-md-12" id="body">'+
+					'{{#each body}}'+
+						'<p class="lead">{{p}}</p>'+
+						'<h3>{{h3}}</h3>'+
 					'{{/each}}'+
-				'{{/body}}'+
-			'</div>' +
+				'</div>' +
 			'</div>'
 		),
 

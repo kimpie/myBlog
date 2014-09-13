@@ -6,16 +6,16 @@ var app = app || {};
 
         var AppRouter = Backbone.Router.extend({
                 routes: {
-                        "posts/": "test"
+                        "posts/:id": "post"
                 },
 
                 initialize: function () {
                     console.log('Router is initialized.');
-                    //app.AppView.vent.on('getPage', this.sendPage, this);
                 },
 
-                test: function () {
-                    console.log('testing router /posts page');
+                post: function (id) {
+                    console.log('Router on page ' + id);
+                    app.AppView.vent.trigger('loadPost', id);
                 }
 
         });

@@ -13,6 +13,7 @@ var app = app || {};
 			title: '',
 			category: ''
 		},
+		idAttribute: '_id',
 		initialize: function(options){
 			console.log('app.postModel initialized');
 		}

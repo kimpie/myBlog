@@ -13,11 +13,12 @@
 		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 		<script type="text/javascript" src="js/lib/underscore-min.js"></script>
 		<script type="text/javascript" src="js/lib/backbone-min.js"></script>
-		<script type="text/javascript" src="js/lib/handlebars.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/lib/handlebars.js"></script>
 
 		<script type="text/javascript" src="js/model/postModel.js"></script>
 		<script type="text/javascript" src="js/collection/posts.js"></script>
+		<script type="text/javascript" src="js/views/scrollBar.js"></script>
 		<script type="text/javascript" src="js/views/postView.js"></script>
 		<script type="text/javascript" src="js/views/AppView.js"></script>
 		<script type="text/javascript" src="js/router/router.js"></script>
@@ -25,30 +26,24 @@
 	</head>
 	<body>
 	<div class="container-fluid">
-		<div class="row" id="header" style="margin:0px;">
-		<!-- non scrolling, fixed to top header with logo-->
-			<h2>West to East Blog</h2>
+		<div class="row" id="header">
+			<h1 id="big">West to East Blog</h1>
+			<hr class="style-two">
 		</div>
 		<div id="app" class="row">
-			<div class="col-md-10" id="post">
+			<div class="col-md-9" id="post">
 				<!--//middle section for blog post-->
 			</div>
-			<div class="col-md-2" id="sideScroll">
-				<h3>Related Posts</h3>
-				<div id="related"></div>
-
-				<h3>Other Posts</h3>
-				<div id="other"></div>
+			<div class="col-md-3" id="sideScroll">
 				<!--//side scroll with related posts + other posts to view-->
 			</div>
 		</div>
 		
 		<div class="footer">
-			<h1 class="big" style="padding-top:20px;">Join our Crowdfund</h1>
-			<h1>LINK</h1>
 		</div>
 </div>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<link href='http://fonts.googleapis.com/css?family=Oxygen|Droid+Sans|Glegoo' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	</body>
 </html>

@@ -7,7 +7,8 @@ var app = app || {};
 		url: '/posts',
 		initialize: function(options){
 			console.log('app.Posts initialized');
-		}
+		},
+		comparator: 'postDate'
 		
 	});
 
