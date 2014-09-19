@@ -19,7 +19,8 @@ var app = app || {};
 			app.AppView.vent.on('loadPost', this.loadPost, this);
 
 			this.post = this.$('#post');
-			this.sideScroll = this.$('#sideScroll');
+			this.categoryScroll = this.$('#categoryScroll');
+			this.allScroll = this.$('#allScroll');
 		},
 
 		events:{
@@ -37,15 +38,22 @@ var app = app || {};
 			console.log(post);
 			var pm = new app.postModel();
 			var model = this.pc.findWhere({_id: post});
+			var cat = model.attributes.category;
 			var pv = new app.postView({model: model});
 			this.post.html(pv.render().el);
-			this.scrollBar();
+			this.scrollBar(cat);
 		},
 
-		scrollBar: function(){
-			console.log('calling scroll');
-			var sb = new app.scrollBar({collection: this.pc});
-			this.sideScroll.html(sb.render().el);
+		scrollBar: function(category){
+			console.log('calling scroll with category ' + category);
+			var filteredCollection = new Backbone.Collection();
+			var filter = {category: category};
+			var results = this.pc.where(filter);
+			filteredCollection.reset(results);
+			var cb = new app.categoryScroll({collection: filteredCollection});
+			this.categoryScroll.html(cb.render().el);
+			var sb = new app.allScroll({collection: this.pc});
+			this.allScroll.html(sb.render().el);
 		} 
 
 	});

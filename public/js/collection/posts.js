@@ -8,7 +8,12 @@ var app = app || {};
 		initialize: function(options){
 			console.log('app.Posts initialized');
 		},
-		comparator: 'postDate'
+		comparator: 'postDate',
+
+		customFilter: function(filters){
+			var results = this.where(filters);
+			return new app.Posts(results);
+		}
 		
 	});
 
