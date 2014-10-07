@@ -10,7 +10,7 @@ var app = app || {};
 				'<div class="col-md-12"><h4>Related Posts</h4></div>'+
 				'{{#each models}}'+
 					'<div class="col-md-12" id="scrollTitle">'+
-						'<a href="#/posts/{{attributes._id}}"><h4>{{attributes.title}}</h4></a>'+
+						'<a href="#/posts/{{attributes._id}}"><h4>{{attributes.postTitle}}</h4></a>'+
 					'</div>' +
 					'<div class="col-md-12"><img src="{{attributes.image}}"></div>'+
 					'<div class="col-md-12"><hr class="style-one"></div>'+

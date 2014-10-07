@@ -17,6 +17,8 @@ var app = app || {};
 
 			app.AppView.vent.on('recent', this.showRecent, this);
 			app.AppView.vent.on('loadPost', this.loadPost, this);
+			app.AppView.vent.on('newPost', this.createNew, this);
+			app.AppView.vent.on('sendPost', this.sendPost, this);
 
 			this.post = this.$('#post');
 			this.categoryScroll = this.$('#categoryScroll');
@@ -24,7 +26,7 @@ var app = app || {};
 		},
 
 		events:{
-			'click #big': 'showRecent'
+			'click #header': 'showRecent'
 		},
 
 		showRecent: function(){
@@ -54,6 +56,19 @@ var app = app || {};
 			this.categoryScroll.html(cb.render().el);
 			var sb = new app.allScroll({collection: this.pc});
 			this.allScroll.html(sb.render().el);
+		},
+
+		createNew: function(){
+			this.post.empty();
+			console.log('#post should be empty')
+			var cp = new app.createPost({collection: this.pc});
+			this.post.html(cp.render().el);
+		},
+
+		sendPost: function(info){
+			console.log('send post has');
+			console.log(info);
+			this.pc.newPost(info);
 		} 
 
 	});

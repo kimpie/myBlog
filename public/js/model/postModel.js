@@ -11,7 +11,9 @@ var app = app || {};
 			month: '',
 			body: [],
 			title: '',
-			category: ''
+			category: '',
+			image: '',
+			postDate: ''
 		},
 		idAttribute: '_id',
 		initialize: function(options){

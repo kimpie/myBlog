@@ -6,7 +6,8 @@ var app = app || {};
 
         var AppRouter = Backbone.Router.extend({
                 routes: {
-                        "posts/:id": "post"
+                        "posts/:id": "post",
+                        "new": "create"
                 },
 
                 initialize: function () {
@@ -16,6 +17,11 @@ var app = app || {};
                 post: function (id) {
                     console.log('Router on page ' + id);
                     app.AppView.vent.trigger('loadPost', id);
+                },
+
+                create: function(){
+                    console.log('Router on new');
+                    app.AppView.vent.trigger('newPost');
                 }
 
         });

@@ -21,3 +21,19 @@ exports.getPost = function (req, res){
 
     });
 };
+
+exports.createPost = function (req, res){
+        var post = new Post({
+            postDate: req.body.postDate,
+            category: req.body.category,
+            country: req.body.country,
+            year: req.body.year,
+            month: req.body.month,
+            postTitle: req.body.postTitle,
+            pbody: req.body.pbody,
+        });
+        post.save( function (err){              
+            if (err) return handleError (err);          
+        });
+        return res.send(post);
+};

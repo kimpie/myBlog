@@ -35,6 +35,7 @@ app.get('/', function (req, res){
 });
 app.get('/posts', api.getPosts);
 app.get('/', api.getPost);
+app.post('/posts', api.createPost);
 
 app.get('/*', function  (req, res) {
   res.json(404, {status: 'not found'});
