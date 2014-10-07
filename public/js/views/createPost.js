@@ -70,10 +70,17 @@ var app = app || {};
 			var arr =[];
 			var m;
 			function addBracket(element, index, array){
-			    console.log(element);
-			    if(element != ''){
+			    console.log(element.charAt(0));
+			    if(element != '' && element.charAt(0) != '?'){
+			    	console.log('inside first if');
 					m = {"p": element};
 					arr.push(m);
+			    } else if (element.charAt(0) == '?'){
+			    	console.log('inside else if');
+			    	var l = element.length; var k = element.slice(1, l);
+			    	m = {"img": k};
+			    	console.log(m);
+			    	arr.push(m);
 			    }
 			}
 
