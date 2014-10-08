@@ -77,7 +77,7 @@ var app = app || {};
 			    	m = {"img": k};
 			    	console.log(m);
 			    	arr.push(m);
-			    } else if( element.charAt(0) == 'h'{
+			    } else if(element.charAt(0) == 'h'){
 			    	var l = element.length; var k = element.slice(1, l);
 			    	m = {"h3": k};
 			    	console.log(m);
@@ -99,7 +99,8 @@ var app = app || {};
 				year: y,
 				month: m,
 				country: co,
-				pbody: b
+				pbody: b,
+				image: im
 			};
 			app.AppView.vent.trigger('sendPost', info);
 		},

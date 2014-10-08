@@ -31,6 +31,7 @@ exports.createPost = function (req, res){
             month: req.body.month,
             postTitle: req.body.postTitle,
             pbody: req.body.pbody,
+            image: req.body.image
         });
         post.save( function (err){              
             if (err) return handleError (err);          

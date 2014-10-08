@@ -24,7 +24,8 @@ var app = app || {};
 				year: info.year,
 				month: info.month,
 				postDate: info.postDate,
-				pbody: info.pbody
+				pbody: info.pbody,
+				image: info.image
 			},{
 				success:function(){
 					console.log('successfully created post');
