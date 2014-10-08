@@ -14,7 +14,7 @@ var app = app || {};
 				  '</div>' +
 				  '<div class="form-group">' +
 				    '<label for="image">Post Image SRC</label>' +
-				    '<input type="image" class="form-control" id="image" placeholder="Enter img src">' +
+				    '<input type="text" class="form-control" id="image" placeholder="Enter img src">' +
 				  '</div>' +
 				  '<div class="form-group">' +
 				    '<label for="catgeory">Category</label>' +
@@ -71,17 +71,22 @@ var app = app || {};
 			var m;
 			function addBracket(element, index, array){
 			    console.log(element.charAt(0));
-			    if(element != '' && element.charAt(0) != '?'){
-			    	console.log('inside first if');
-					m = {"p": element};
-					arr.push(m);
-			    } else if (element.charAt(0) == '?'){
+			    if (element.charAt(0) == '?'){
 			    	console.log('inside else if');
 			    	var l = element.length; var k = element.slice(1, l);
 			    	m = {"img": k};
 			    	console.log(m);
 			    	arr.push(m);
-			    }
+			    } else if( element.charAt(0) == 'h'{
+			    	var l = element.length; var k = element.slice(1, l);
+			    	m = {"h3": k};
+			    	console.log(m);
+			    	arr.push(m);
+			    } else if(element != ''){
+			    	console.log('inside first if');
+					m = {"p": element};
+					arr.push(m);
+			    } 
 			}
 
 			k.forEach(addBracket);
