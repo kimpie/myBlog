@@ -8,13 +8,15 @@ var app = app || {};
 		template: Handlebars.compile(
 			'<div class="row scroll" id="scrollPost">'+
 				'<div class="col-md-12"><h4>Related Posts</h4></div>'+
+				'<ul>'+
 				'{{#each models}}'+
-					'<div class="col-md-12" id="scrollTitle">'+
+					'<li>'+
 						'<a href="#/posts/{{attributes._id}}"><h4>{{attributes.postTitle}}</h4></a>'+
-					'</div>' +
-					'<div class="col-md-12"><img src="{{attributes.image}}"></div>'+
-					'<div class="col-md-12"><hr class="style-one"></div>'+
+						'<img src="{{attributes.image}}">'+
+						'<hr class="style-one">'+
+					'</li>'+
 				'{{/each}}'+
+				'</ul>'+
 			'</div>'
 		),
 

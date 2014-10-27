@@ -72,7 +72,7 @@ var app = app || {};
 			function addBracket(element, index, array){
 			    console.log(element.charAt(0));
 			    if (element.charAt(0) == '?'){
-			    	console.log('inside else if');
+			    	console.log('inside first if');
 			    	var l = element.length; var k = element.slice(1, l);
 			    	m = {"img": k};
 			    	console.log(m);
@@ -80,10 +80,10 @@ var app = app || {};
 			    } else if(element.charAt(0) == 'h'){
 			    	var l = element.length; var k = element.slice(1, l);
 			    	m = {"h3": k};
-			    	console.log(m);
+			    	console.log("inside else if with " + m);
 			    	arr.push(m);
 			    } else if(element != ''){
-			    	console.log('inside first if');
+			    	console.log('inside last if');
 					m = {"p": element};
 					arr.push(m);
 			    } 

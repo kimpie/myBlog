@@ -7,13 +7,15 @@ var app = app || {};
 
 		template: Handlebars.compile(
 			'<div class="row scroll">'+
+				'<ul>'+
 				'{{#each models}}'+
-					'<div class="col-md-12" id="scrollTitle">'+
-						'<a href="#/posts/{{attributes._id}}"><h4>{{attributes.postTitle}}</h4></a>'+
-					'</div>' +
-					'<div class="col-md-12"><img src="{{attributes.image}}"></div>'+
-					'<div class="col-md-6 col-md-offset-3"><hr class="style-one"></div>'+
+					'<li>'+
+						'<a href="#/posts/{{attributes._id}}"><h4>{{attributes.postTitle}}</h4></a>'+					'</div>' +
+						'<img src="{{attributes.image}}">'+
+						'<hr class="style-one">'+
+					'</li>'+
 				'{{/each}}'+
+				'</ul>'+
 			'</div>'
 		),
 

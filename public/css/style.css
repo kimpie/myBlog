@@ -58,14 +58,18 @@ a href{
 }
 
 #scroll{
-	padding-top: 20px;
-	position: fixed;
-	top: 110px;
-	bottom: 10px;
-	margin: 10px;
-	overflow: scroll;
-	overflow-x: hidden;
-	right: 0;
+	height: 200px;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+
+.scroll ul{
+	list-style: none;
+}
+
+.scroll li{
+	display: inline;
 }
 
 #categoryScroll{
