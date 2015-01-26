@@ -5,24 +5,22 @@ var app = app || {};
 
 	app.allScroll = Backbone.View.extend({
 
+		tagname: 'ul',
+
 		template: Handlebars.compile(
-			'<div class="row scroll">'+
-				'<ul>'+
+				'<ul style="padding-left:0;" class="scroll">'+
 				'{{#each models}}'+
 					'<li>'+
 						'<a href="#/posts/{{attributes._id}}"><h4>{{attributes.postTitle}}</h4></a>'+					'</div>' +
-						'<img src="{{attributes.image}}">'+
-						'<hr class="style-one">'+
+						'<img src="{{attributes.image}}" class="img-responsive center-block">'+
 					'</li>'+
 				'{{/each}}'+
-				'</ul>'+
-			'</div>'
+				'</ul>'
 		),
 
 		initialize: function  (options) {
 			this.collection = options.collection;
-			console.log('post collection initialized with category ' + options.category);
-			console.log(this.collection);
+			console.log('inside allScroll');
 			this.collection.bind("change", this.render, this);
 			this.collection.bind("reset", this.render);
 
@@ -35,7 +33,7 @@ var app = app || {};
 		},
 
 		render: function () {
-			console.log('render happening');
+			console.log(this.$el);
 			this.$el.html(this.template(this.collection));
 			return this;
 		}
