@@ -31,14 +31,22 @@ var app = app || {};
 		},
 
 		events:{
-			'click #header': 'showRecent'
+			'click .goHome': 'showRecent'
 		},
 
-		showList: function(e){
-			console.log(e);
-			var collection = this.pc.where({category: e});
-			console.log(collection);
-			var lv = new app.listView({collection: collection});
+		filtered: function(category){
+			var filteredCollection = new Backbone.Collection();
+			console.log(filteredCollection);
+			var filter = {category: category};
+			var results = this.pc.where(filter);
+			filteredCollection.reset(results);
+			return filteredCollection;
+		},	
+
+		showList: function(category){
+			var fc = this.filtered(category);
+			console.log(fc);
+			var lv = new app.listView({collection: fc});
 			this.post.html(lv.render().el);
 		},
 
@@ -71,12 +79,8 @@ var app = app || {};
 		},
 
 		scrollBar: function(category, post){
-			console.log('calling scroll with category ' + category);
-			var filteredCollection = new Backbone.Collection();
-			var filter = {category: category};
-			var results = this.pc.where(filter);
-			filteredCollection.reset(results);
-			var cb = new app.categoryScroll({collection: filteredCollection});
+			var fc = this.filtered(category);
+			var cb = new app.categoryScroll({collection: fc});
 			this.categoryScroll.html(cb.render().el);
 			var sb = new app.allScroll({collection: this.pc});
 			this.allScroll.html(sb.render().el);

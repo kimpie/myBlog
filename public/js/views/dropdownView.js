@@ -7,8 +7,8 @@ var app = app || {};
 
 		template: Handlebars.compile(
 		'<div class="row">' +
-			'<div class="col-md-1"><h4>Home</h4></div>'+
-			'<div class="col-md-1"><h4>About</h4></div>' +
+			'<div class="col-md-1 goHome" style="cursor: pointer;"><h4>home</h4></div>'+
+			'<div class="col-md-1" id="about"><h4>about</h4></div>' +
 			'<div class="col-md-1 dropdown">'+
   				'<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Places<span class="caret"></span>'+
  				 '</button>' +
@@ -30,16 +30,21 @@ var app = app || {};
 
 		initialize: function  (options) {
 			this.collection = options.collection;
-			console.log('inside dropdownView');
 			this.collection.bind("change", this.render, this);
 			this.collection.bind("reset", this.render);
 		},
 
 		events: {
+			'click #about': 'showAbout',
 			'click #place': 'showplace'
 		},
 
+		showAbout: function(){
+			console.log('about clicked');
+		},
+
 		showplace: function (e){
+			e.preventDefault();
 			console.log(e.currentTarget.text);
 			var place = e.currentTarget.text;
 			app.AppView.vent.trigger('placeList', place);

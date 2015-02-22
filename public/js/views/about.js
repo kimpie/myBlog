@@ -9,7 +9,7 @@ var app = app || {};
 			'<div class="row" id="text">'+
 				'<div class="col-md-12" id="title"><h2>About</h2></div>' +
 				'<div class="col-md-12" id="body">'+
-					'<p>This is the about page.</p>'
+					'<p>This is the about page.</p>'+
 				'</div>' +
 			'</div>'
 		),

@@ -74,7 +74,7 @@ ul li a{
 
 #ddbar{
 	margin-top: 70px;
-	background-color: #165CCC;
+	background-color: #165DCC;
 	color: white;
 	text-align: center;
 }
@@ -137,6 +137,27 @@ li{
 	width: 100%;
 }
 
+li.postList {
+	margin-top: 15px;
+}
+
+#postSnip {
+	padding: 15px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright:5px;
+	-moz-border-radius-bottomleft:5px;
+	-moz-border-radius-bottomright:5px;
+	-webkit-border-top-left-radius:5px;
+	-webkit-border-top-right-radius:5px;
+	-webkit-border-bottom-left-radius:5px;
+	-webkit-border-bottom-right-radius:5px;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+	background-color: #ddd;
+}
+
 .vertical-align {
     display: flex;
     align-items: center;
@@ -158,4 +179,8 @@ li{
 	border-bottom-left-radius:5px;
 	border-bottom-right-radius:5px;
 	padding-bottom: 10px;
+}
+
+#about{
+	cursor: pointer;
 }
