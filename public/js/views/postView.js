@@ -8,6 +8,7 @@ var app = app || {};
 		template: Handlebars.compile(
 			'<div class="row" id="text">'+
 				'<div class="col-md-12" id="title"><h2>{{postTitle}}</h2></div>' +
+				'<div class="col-md-12" id="date"><h4>Posted {{postDate}}</h4></div>' +
 				'<div class="col-md-12" id="body">'+
 					'{{#each pbody}}'+
 						'<p class="lead">{{p}}</p>'+
@@ -15,6 +16,7 @@ var app = app || {};
 						'{{#if img}}<img src="{{img}}">{{/if}}'+
 					'{{/each}}'+
 				'</div>' +
+				'<hr>'+	
 			'</div>'
 		),
 
