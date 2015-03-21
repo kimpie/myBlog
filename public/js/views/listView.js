@@ -12,6 +12,7 @@ var app = app || {};
 
 		template: Handlebars.compile(
 			'<ul class="scroll">'+
+			'{{#if models}}'+
 				'{{#each models}}'+
 					'<li class="postList">'+
 						'<div class="row">'+
@@ -34,6 +35,9 @@ var app = app || {};
 						'</div>'+
 					'</li>'+
 				'{{/each}}'+
+			'{{else}}'+
+				'<div class="row"><div class="col-md-12"><h2>Sorry, I\'m behind on posts... coming soon.</h2></div></div>'+
+			'{{/if}}'+
 			'</ul>'
 		),
 

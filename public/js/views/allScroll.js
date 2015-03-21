@@ -9,6 +9,7 @@ var app = app || {};
 
 		template: Handlebars.compile(
 				'<ul style="padding-left:0;" class="scroll">'+
+				'<div class="row"><div class="col-md-12" style="color:#04C8A7;"><h3>All Posts</h3></div></div>'+
 				'{{#each models}}'+
 					'<li>'+
 						'<a href="#/posts/{{attributes._id}}"><h4>{{attributes.postTitle}}</h4></a>'+					'</div>' +

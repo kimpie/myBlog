@@ -115,6 +115,17 @@ li{
 	cursor: pointer;
 }
 
+#categoryScroll a:hover, #allScroll a:hover
+{
+    color: gray !important;
+    text-decoration: none !important;
+}
+
+#categoryScroll a, #allScroll a
+{
+    color: black !important;
+}
+
 .footer{
 	background-color: #09090B;
 	color: white;

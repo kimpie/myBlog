@@ -17,7 +17,7 @@ var app = app || {};
 				'<div class="row" id="pvtitle">'+
 					'<div class="col-md-5 col-md-offset-1"><img src="{{image}}"></div>'+
 					'<div class="col-md-6" style="align:left"><h1>{{postTitle}}</h1></div>' +
-					'<div class="col-md-6" style="color:gray"><h4>{{country}}</h4></div>' +
+					'<div class="col-md-6" style="color:#04C8A7; cursor:pointer" id="country"><h4>{{country}}</h4></div>' +
 					'<div class="col-md-6" style="color:gray"><h6>Posted {{#date postDate}}{{/date}}</h6></div>' +
 				'</div>'+
 				'<div class="col-md-12"><hr></div>'+
@@ -41,6 +41,16 @@ var app = app || {};
 			console.log(this.model);
 			this.model.bind("change", this.render, this);
 			this.model.bind("reset", this.render);
+		},
+
+		events:{
+			'click #country': 'countryList'
+		},
+
+		countryList: function(e){
+			console.log(e);
+			//var place = e.currentTarget.text;
+			//app.AppView.vent.trigger('placeList', place);
 		},
 
 		render: function () {
