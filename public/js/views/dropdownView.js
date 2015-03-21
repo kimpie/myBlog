@@ -10,8 +10,8 @@ var app = app || {};
 			'<div class="col-md-1 goHome" style="cursor: pointer;"><h4>home</h4></div>'+
 			'<div class="col-md-1" id="about"><h4>about</h4></div>' +
 			'<div class="col-md-1 dropdown">'+
-  				'<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Places<span class="caret"></span>'+
- 				 '</button>' +
+  				'<div class="dropdown-toggle" style="font-family: \'Oxygen\', sans-serif; cursor: pointer" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"><h4>Places</h4><span class="caret"></span>'+
+ 				 '</div>' +
   				'<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">' +
    					 '<li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="place">Australia</a></li>'+
    					 '<li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="place">Cambodia</a></li>'+

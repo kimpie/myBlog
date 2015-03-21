@@ -9,11 +9,13 @@ var app = app || {};
 		return text;
 	});
 
+
 	app.postView = Backbone.View.extend({
 
 
 		template: Handlebars.compile(
 			'<div class="row" id="text">'+
+				'<div id="test"></div>'+
 				'<div class="row" id="pvtitle">'+
 					'<div class="col-md-5 col-md-offset-1"><img src="{{image}}"></div>'+
 					'<div class="col-md-6" style="align:left"><h1>{{postTitle}}</h1></div>' +
@@ -48,10 +50,11 @@ var app = app || {};
 		},
 
 		countryList: function(e){
-			console.log(e);
-			//var place = e.currentTarget.text;
-			//app.AppView.vent.trigger('placeList', place);
+			var c = this.model.attributes.country;
+			console.log(c);
+			app.AppView.vent.trigger('placeList', c);
 		},
+
 
 		render: function () {
 			console.log('render happening');

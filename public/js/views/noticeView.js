@@ -6,7 +6,10 @@ var app = app || {};
 	app.noticeView = Backbone.View.extend({
 
 		template: Handlebars.compile(
-			'<h1>Thanks for visiting!</h1>'
+			'<div class="col-md-12">'+
+				'<h2 style="padding-top:20px">Welcome to my travel blog</h2>'+
+				'<h3>Find the latest post below plus more from all over!</h3>'+
+			'</div>'
 		),
 
 		initialize: function  (options) {

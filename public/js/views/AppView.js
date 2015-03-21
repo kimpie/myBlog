@@ -28,6 +28,7 @@ var app = app || {};
 			this.allScroll = this.$('#allScroll');
 			this.notice = this.$('#notice');
 			this.ddbar = this.$('#ddbar');
+			this.notice = this.$('#notice');
 		},
 
 		events:{
@@ -60,6 +61,7 @@ var app = app || {};
 			var recent = this.pc.at(0).id;
 			console.log(recent);
 			this.loadPost(recent);
+			this.showNotice();
 			this.loadDropdown();
 		},
 
