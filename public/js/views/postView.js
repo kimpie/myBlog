@@ -3,12 +3,24 @@ var app = app || {};
 (function ($) {
         'use strict';
 
+	Handlebars.registerHelper('date', function(text) {
+		text = text.substr(0,15);;
+
+		return text;
+	});
+
 	app.postView = Backbone.View.extend({
+
 
 		template: Handlebars.compile(
 			'<div class="row" id="text">'+
-				'<div class="col-md-12" id="title"><h2>{{postTitle}}</h2></div>' +
-				'<div class="col-md-12" id="date"><h4>Posted {{postDate}}</h4></div>' +
+				'<div class="row" id="pvtitle">'+
+					'<div class="col-md-5 col-md-offset-1"><img src="{{image}}"></div>'+
+					'<div class="col-md-6" style="align:left"><h1>{{postTitle}}</h1></div>' +
+					'<div class="col-md-6" style="color:gray"><h4>{{country}}</h4></div>' +
+					'<div class="col-md-6" style="color:gray"><h6>Posted {{#date postDate}}{{/date}}</h6></div>' +
+				'</div>'+
+				'<div class="col-md-12"><hr></div>'+
 				'<div class="col-md-12" id="body">'+
 					'{{#each pbody}}'+
 						'<p class="lead">{{p}}</p>'+
@@ -16,7 +28,10 @@ var app = app || {};
 						'{{#if img}}<img src="{{img}}">{{/if}}'+
 					'{{/each}}'+
 				'</div>' +
-				'<hr>'+	
+				'<div class="row">'+
+					'<div class="col-md-6"style="margin-top:30px"><h3>LIKE</h3></div>'+
+					'<div class="col-md-12" style="margin-bottom:40px"><hr></div>'+
+				'</div>'+
 			'</div>'
 		),
 
