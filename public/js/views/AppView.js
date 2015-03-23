@@ -21,6 +21,7 @@ var app = app || {};
 			app.AppView.vent.on('sendPost', this.sendPost, this);
 			app.AppView.vent.on('about', this.loadAbout, this);
 			app.AppView.vent.on('notice', this.showNotice, this);
+			app.AppView.vent.on('hideN', this.hideNotice, this);
 			app.AppView.vent.on('placeList', this.showList, this);
 
 			this.post = this.$('#post');
@@ -32,7 +33,12 @@ var app = app || {};
 		},
 
 		events:{
-			'click .goHome': 'showRecent'
+			'click .goHome': 'showRecent',
+			'click #about': 'showAbout'
+		},
+
+		hideNotice: function(){
+			this.notice.hide();
 		},
 
 		filtered: function(category){
@@ -52,6 +58,7 @@ var app = app || {};
 		},
 
 		showNotice: function(){
+			this.notice.show();
 			var n = new app.noticeView();
 			this.notice.html(n.render().el);
 		},
@@ -65,13 +72,17 @@ var app = app || {};
 			this.loadDropdown();
 		},
 
+		showAbout: function(){
+			var a = new app.aboutView();
+			this.post.html(a.render().el);
+		},
+
 		loadDropdown: function(){
 			var dd = new app.dropdownView({collection: this.pc});
 			this.ddbar.html(dd.render().el);
 		},
 
 		loadPost: function(post){
-			console.log(post);
 			var pm = new app.postModel();
 			var model = this.pc.findWhere({_id: post});
 			var cat = model.attributes.category;

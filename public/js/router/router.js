@@ -19,6 +19,7 @@ var app = app || {};
                 post: function (id) {
                     console.log('Router on page ' + id);
                     app.AppView.vent.trigger('loadPost', id);
+                    app.AppView.vent.trigger('hideN');
                 },
 
                 create: function(){
@@ -28,6 +29,7 @@ var app = app || {};
 
                 about: function(){
                     app.AppView.vent.trigger('about');
+                    app.AppView.vent.trigger('hideN');
                 }
 
         });
