@@ -160,7 +160,8 @@ li{
 #post{
 	height: 100%;
 	overflow: auto;
-	margin-top: 20px;
+	overflow-x: hidden;
+	padding-top: 20px;
 }
 
 #post img{
