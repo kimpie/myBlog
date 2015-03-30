@@ -165,8 +165,8 @@ li{
 }
 
 #post img{
-	text-align: center;
-	width: 100%;
+	align: middle;
+	/*width: 100%;*/
 }
 
 li.postList {
@@ -210,6 +210,7 @@ li.postList {
 	border-top-right-radius:5px;
 	border-bottom-left-radius:5px;
 	border-bottom-right-radius:5px;
+	width: 100%;
 }
 
 #related {

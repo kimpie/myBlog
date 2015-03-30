@@ -25,6 +25,7 @@ var app = app || {};
 			app.AppView.vent.on('placeList', this.showList, this);
 
 			this.post = this.$('#post');
+			this.sb = this.$('#scrollBar');
 			this.categoryScroll = this.$('#categoryScroll');
 			this.allScroll = this.$('#allScroll');
 			this.notice = this.$('#notice');
@@ -88,7 +89,10 @@ var app = app || {};
 			var cat = model.attributes.category;
 			var pv = new app.postView({model: model});
 			this.post.html(pv.render().el);
+			this.post.scrollTop(0);
+			$(window).scrollTop(0);
 			this.scrollBar(cat, post);
+			this.sb.scrollTop(0);
 		},
 
 		scrollBar: function(category, post){
