@@ -32,6 +32,7 @@ var app = app || {};
 				'</div>' +
 				'<div class="row">'+
 					'<div class="col-md-6"style="margin-top:30px"><h3>LIKE</h3></div>'+
+					'<div class="col-md-1 col-md-offset-5" id="up" style="cursor:pointer"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></div>'+
 					'<div class="col-md-12" style="margin-bottom:40px"><hr></div>'+
 				'</div>'+
 			'</div>'
@@ -46,7 +47,13 @@ var app = app || {};
 		},
 
 		events:{
-			'click #country': 'countryList'
+			'click #country': 'countryList',
+			'click #up': 'gotoTop'
+		},
+
+		gotoTop: function(){
+			$('#post').scrollTop(0);
+			$(window).scrollTop(0);
 		},
 
 		countryList: function(e){
